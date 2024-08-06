@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:glass_bottle"
+    },
+    "E": {
+      "item": "orespiders:queen_spider_eye"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "pattern": [
+    "EGE",
+    "GBG",
+    "EGE"
+  ],
+  "result": {
+    "item": "orespiders:potion_queen_spider"
+  },
+  "show_notification": true
+}

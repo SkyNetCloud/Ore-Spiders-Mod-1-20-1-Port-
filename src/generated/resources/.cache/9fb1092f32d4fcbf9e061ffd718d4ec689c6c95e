@@ -1,0 +1,9 @@
+// 1.20.1	2024-08-06T00:57:30.561884639	Recipes
+6c0306d47021c1f423c9c0eeac4ebbe4b62f348c data/minecraft/advancements/recipes/misc/diamond.json
+56939352f09252588316dcd436ecf77c5b9ea66d data/minecraft/recipes/diamond.json
+2deed67d438c5424113288cdbc82d02e155e3f52 data/orespiders/advancements/recipes/misc/diamond_nugget.json
+c3e1e4477518d53a20595eb60b6ffc67ffb8f63e data/orespiders/advancements/recipes/misc/potion_queen_spider.json
+463610fbc3ae896c2635267c7dc8a0bc39e03b0b data/orespiders/advancements/recipes/misc/queen_spider_eye.json
+6a06cfe555abbe29ae8535076333819c7f586d76 data/orespiders/recipes/diamond_nugget.json
+2fded66222763da7eb9921b9639a0d19aa674667 data/orespiders/recipes/potion_queen_spider.json
+ff21d7d696c550ec5053bd22f897ce36c40cf54f data/orespiders/recipes/queen_spider_eye.json

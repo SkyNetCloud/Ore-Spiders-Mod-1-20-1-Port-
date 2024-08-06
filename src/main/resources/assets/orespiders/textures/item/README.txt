@@ -1,0 +1,2 @@
+I do not own the texture for the diamond nugget. I took that from the Thermal Foundation mod. Not that it's a big deal. Just thought I might as well say it.
+I wouldn't have had to put this here if the OreSpider's Devs had made an item texture for diamond nuggets, but he didn't.

@@ -1,0 +1,35 @@
+{
+  "creativetab.ore_spiders_tab": "Ore Spiders Content (1.20.1 Port)",
+
+  "entity.orespiders.coal_spider": "Coal Spider",
+  "entity.orespiders.lapis_spider": "Lapis Spider",
+  "entity.orespiders.quartz_spider": "Nether Quartz Spider",
+  "entity.orespiders.redstone_spider": "Redstone Spider",
+  "entity.orespiders.ender_spider": "Ender Spider",
+  "entity.orespiders.gold_spider": "Golden Spider",
+  "entity.orespiders.iron_spider": "Iron Spider",
+  "entity.orespiders.diamond_spider": "Diamond Spider",
+  "entity.orespiders.emerald_spider": "Emerald Spider",
+  "entity.orespiders.obsidian_spider": "Obsidian Spider",
+
+  "entity.orespiders.queen_spider_phase_zero": "Queen Spider",
+  "entity.orespiders.queen_spider_phase_one": "Queen Spider",
+  "entity.orespiders.queen_spider_phase_two": "Queen Spider",
+  "entity.orespiders.queen_spider_phase_three": "Queen Spider",
+
+  "item.orespiders.coal_spider_spawn_egg": "Coal Spider Spawn Egg",
+  "item.orespiders.obsidian_spider_spawn_egg": "Obsidian Spider Spawn Egg",
+  "item.orespiders.iron_spider_spawn_egg": "Iron Spider Spawn Egg",
+  "item.orespiders.ender_spider_spawn_egg": "Ender Spider Spawn Egg",
+  "item.orespiders.redstone_spider_spawn_egg": "Redstone Spider Spawn Egg",
+  "item.orespiders.lapis_spider_spawn_egg": "Lapis Spider Spawn Egg",
+  "item.orespiders.quartz_spider_spawn_egg": "Nether Quartz Spider Spawn Egg",
+  "item.orespiders.gold_spider_spawn_egg": "Golden Spider Spawn Egg",
+  "item.orespiders.diamond_spider_spawn_egg": "Diamond Spider Spawn Egg",
+  "item.orespiders.emerald_spider_spawn_egg": "Emerald Spider Spawn Egg",
+
+  "item.orespiders.diamond_nugget": "Diamond Nugget",
+  "item.orespiders.queen_spider_eye": "Queen Spider Eye",
+  "item.orespiders.potion_queen_spider": "Mysterious Potion",
+  "item.orespiders.orb_weaver": "Orb Weaver"
+}
