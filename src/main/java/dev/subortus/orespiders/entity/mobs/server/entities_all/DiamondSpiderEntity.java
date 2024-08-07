@@ -30,8 +30,7 @@ public class DiamondSpiderEntity extends Spider {
     }
 
     public static boolean checkOreSpiderSpawnRules(EntityType<? extends Monster> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        boolean inCave = pLevel.getHeight() < 55;
-        if (inCave){
+        if (pType.getHeight() < -10){
             return pLevel.getDifficulty() != Difficulty.PEACEFUL && isDarkEnoughToSpawn(pLevel, pPos, pRandom) && checkMobSpawnRules(pType, pLevel, pSpawnType, pPos, pRandom);
         } else {
             return false;
