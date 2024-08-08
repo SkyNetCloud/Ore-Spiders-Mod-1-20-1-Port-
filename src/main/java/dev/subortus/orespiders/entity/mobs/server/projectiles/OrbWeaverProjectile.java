@@ -39,7 +39,12 @@ public class OrbWeaverProjectile extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult pResult) {
         if(!this.level().isClientSide()){
             this.level().broadcastEntityEvent(this, (byte)3);
-            this.level().setBlock(pResult.getEntity().getOnPos().above(random.nextInt(0,2)),Blocks.COBWEB.defaultBlockState(),3);
+            int rand = random.nextInt(0, 2);
+            if(rand == 0 && this.level().getBlockState(pResult.getEntity().getOnPos()).is(Blocks.AIR)){ // Stop this block from destroying bedrock.
+                this.level().setBlock(pResult.getEntity().getOnPos(),Blocks.COBWEB.defaultBlockState(),3);
+            } else if (rand == 1 && this.level().getBlockState(pResult.getEntity().getOnPos().above(1)).is(Blocks.AIR)){
+                this.level().setBlock(pResult.getEntity().getOnPos().above(1),Blocks.COBWEB.defaultBlockState(),3);
+            }
             this.discard();
         }
     }

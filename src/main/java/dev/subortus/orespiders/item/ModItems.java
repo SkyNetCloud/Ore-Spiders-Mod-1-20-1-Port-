@@ -63,7 +63,7 @@ public class ModItems {
             () -> new SpiderQueenPotionItem(new Item.Properties()));
 
     public static final RegistryObject<Item> ORB_WEAVER = MOD_ITEMS.register("orb_weaver",
-            () -> new OrbWeaverItem(new Item.Properties()));
+            () -> new OrbWeaverItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> ORB_WEAVER_PROJECTILE = MOD_ITEMS.register("orb_weaver_projectile",
             () -> new Item(new Item.Properties()));
