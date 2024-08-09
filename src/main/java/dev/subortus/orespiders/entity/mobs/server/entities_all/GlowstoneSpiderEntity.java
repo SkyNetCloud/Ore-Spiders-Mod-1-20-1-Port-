@@ -1,17 +1,11 @@
 package dev.subortus.orespiders.entity.mobs.server.entities_all;
 
-import net.minecraft.client.renderer.LightTexture;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -22,29 +16,18 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LightBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.LightChunk;
-import net.minecraft.world.level.chunk.LightChunkGetter;
-import net.minecraft.world.level.lighting.BlockLightEngine;
-import net.minecraft.world.level.lighting.LevelLightEngine;
-import net.minecraft.world.level.lighting.LightEngine;
-import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.Level;
 
 
-public class ObsidianSpiderEntity extends Spider {
-    public ObsidianSpiderEntity(EntityType<? extends Spider> pEntityType, Level pLevel) {
+public class GlowstoneSpiderEntity extends Spider {
+    public GlowstoneSpiderEntity(EntityType<? extends Spider> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(4, new ObsidianSpiderAttackGoal(this));
+        this.goalSelector.addGoal(4, new GlowstoneSpiderAttackGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -55,33 +38,9 @@ public class ObsidianSpiderEntity extends Spider {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)
-                .add(Attributes.MOVEMENT_SPEED, (double)0.2F) // Default Spider movement speed - 0.1
-                .add(Attributes.ATTACK_DAMAGE, 7.0f)
-                .add(Attributes.FOLLOW_RANGE, 12)  // Default Spider follow range - 4
-                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0f);
-    }
-
-    @Override
-    public void aiStep() {
-        super.aiStep();
-        if(random.nextInt(20) == 10){
-            this.level().addParticle(ParticleTypes.LAVA, this.getRandomX(0.2D), this.getRandomY(), this.getRandomZ(0.2D), 0.0D, 0.0D, 0.0D);
-        }
-    }
-
-    public static boolean checkObsidianSpiderSpawnRules(EntityType<? extends Monster> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        boolean nearObsidian = pLevel.getBlockStates(new AABB(-1.5,-1.5,-1.5,1.5,1.5,1.5)).anyMatch(blockState -> blockState.is(Blocks.OBSIDIAN));
-        if (nearObsidian){
-            return pLevel.getDifficulty() != Difficulty.PEACEFUL && isDarkEnoughToSpawn(pLevel, pPos, pRandom) && checkMobSpawnRules(pType, pLevel, pSpawnType, pPos, pRandom);
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public boolean fireImmune() {
-        return true;
+                .add(Attributes.MAX_HEALTH, 11.0F)
+                .add(Attributes.MOVEMENT_SPEED, 0.3F) // Default Spider movement speed.
+                .add(Attributes.ATTACK_DAMAGE, 3.5f);
     }
 
     @Override
@@ -89,29 +48,29 @@ public class ObsidianSpiderEntity extends Spider {
         super.dropCustomDeathLoot(pSource, pLooting, pRecentlyHit);
         if(!this.level().isClientSide()){
             int ranNum = random.nextInt(2);
-            int ammountToDrop = random.nextInt(3);
-            int ammountToDropWithlootEnchant = pLooting * ammountToDrop;
+            int ammountToDrop = random.nextInt(4);
+            int ammountToDropWithlootEnchant = (pLooting + 1) * ammountToDrop;
             if(pLooting == 0){
                 if(ranNum == 1){
                     int i = 0;
                     while(i <= ammountToDrop) {
-                        this.spawnAtLocation(Items.OBSIDIAN);
+                        this.spawnAtLocation(Items.GLOWSTONE);
                         i++;
                     }
                 }
             } else {
                 int i = 0;
                 while(i > ammountToDropWithlootEnchant) {
-                    this.spawnAtLocation(Items.OBSIDIAN);
+                    this.spawnAtLocation(Items.GLOWSTONE);
                     i++;
                 }
             }
-            this.spawnAtLocation(Items.OBSIDIAN);
+            this.spawnAtLocation(Items.GLOWSTONE);
         }
     }
 
-    static class ObsidianSpiderAttackGoal extends MeleeAttackGoal {
-        public ObsidianSpiderAttackGoal(Spider pSpider) {
+    static class GlowstoneSpiderAttackGoal extends MeleeAttackGoal {
+        public GlowstoneSpiderAttackGoal(Spider pSpider) {
             super(pSpider, 1.0D, true);
         }
 
@@ -138,7 +97,7 @@ public class ObsidianSpiderEntity extends Spider {
                 this.resetAttackCooldown();
                 this.mob.swing(InteractionHand.MAIN_HAND);
                 this.mob.doHurtTarget(pEnemy);
-                pEnemy.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, true, true, true));
+                pEnemy.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100, 1, true, true, true));
             }
 
         }

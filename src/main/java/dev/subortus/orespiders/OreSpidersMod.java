@@ -5,9 +5,11 @@ import dev.subortus.orespiders.entity.mobs.client.renderers.coal.CoalSpiderRende
 import dev.subortus.orespiders.entity.mobs.client.renderers.diamond.DiamondSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.emerald.EmeraldSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.ender.EnderSpiderRenderer;
+import dev.subortus.orespiders.entity.mobs.client.renderers.glowstone.GlowstoneSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.gold.GoldenSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.iron.IronSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.lapis.LapisSpiderRenderer;
+import dev.subortus.orespiders.entity.mobs.client.renderers.netherite.NetheriteSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.obsidian.ObsidianSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.quartz.QuartzSpiderRenderer;
 import dev.subortus.orespiders.entity.mobs.client.renderers.redstone.RedstoneSpiderRenderer;
@@ -83,6 +85,8 @@ public class OreSpidersMod
                     QuartzSpiderEntity::checkMonsterSpawnRules);
             SpawnPlacements.register(ModEntities.OBSIDIAN_SPIDER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,
                     ObsidianSpiderEntity::checkObsidianSpiderSpawnRules);
+            SpawnPlacements.register(ModEntities.GLOWSTONE_SPIDER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,
+                    GlowstoneSpiderEntity::checkMonsterSpawnRules);
         });
     }
 
@@ -112,6 +116,8 @@ public class OreSpidersMod
             EntityRenderers.register(ModEntities.EMERALD_SPIDER_ENTITY.get(), EmeraldSpiderRenderer::new);
             EntityRenderers.register(ModEntities.DIAMOND_SPIDER_ENTITY.get(), DiamondSpiderRenderer::new);
             EntityRenderers.register(ModEntities.OBSIDIAN_SPIDER_ENTITY.get(), ObsidianSpiderRenderer::new);
+            EntityRenderers.register(ModEntities.GLOWSTONE_SPIDER_ENTITY.get(), GlowstoneSpiderRenderer::new);
+            EntityRenderers.register(ModEntities.NETHERITE_SPIDER_ENTITY.get(), NetheriteSpiderRenderer::new);
 
             EntityRenderers.register(RegisterQueenSpider.QUEEN_SPIDER_PHASE_ZERO.get(), QueenZeroSpiderRenderer::new);
             EntityRenderers.register(RegisterQueenSpider.QUEEN_SPIDER_PHASE_ONE.get(), QueenOneSpiderRenderer::new);

@@ -27,6 +27,8 @@ public class ModCreativeModeTab {
                         output.accept(ModItems.EMERALD_SPIDER_SPAWN_EGG.get());
                         output.accept(ModItems.DIAMOND_SPIDER_SPAWN_EGG.get());
                         output.accept(ModItems.OBSIDIAN_SPIDER_SPAWN_EGG.get());
+                        output.accept(ModItems.GLOWSTONE_SPIDER_SPAWN_EGG.get());
+                        output.accept(ModItems.NETHERITE_SPIDER_SPAWN_EGG.get());
 
                         output.accept(ModItems.QUEEN_SPIDER_EYE.get());
                         output.accept(ModItems.MYSTERIOUS_POTION.get());

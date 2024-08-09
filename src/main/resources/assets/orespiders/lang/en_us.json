@@ -11,6 +11,8 @@
   "entity.orespiders.diamond_spider": "Diamond Spider",
   "entity.orespiders.emerald_spider": "Emerald Spider",
   "entity.orespiders.obsidian_spider": "Obsidian Spider",
+  "entity.orespiders.glowstone_spider": "Glowstone Spider",
+  "entity.orespiders.netherite_spider": "Ancient Spider",
 
   "entity.orespiders.queen_spider_phase_zero": "Queen Spider",
   "entity.orespiders.queen_spider_phase_one": "Queen Spider",
@@ -27,6 +29,8 @@
   "item.orespiders.gold_spider_spawn_egg": "Golden Spider Spawn Egg",
   "item.orespiders.diamond_spider_spawn_egg": "Diamond Spider Spawn Egg",
   "item.orespiders.emerald_spider_spawn_egg": "Emerald Spider Spawn Egg",
+  "item.orespiders.glowstone_spider_spawn_egg": "Glowstone Spider Spawn Egg",
+  "item.orespiders.netherite_spider_spawn_egg": "Ancient Spider Spawn Egg",
 
   "item.orespiders.diamond_nugget": "Diamond Nugget",
   "item.orespiders.queen_spider_eye": "Queen Spider Eye",

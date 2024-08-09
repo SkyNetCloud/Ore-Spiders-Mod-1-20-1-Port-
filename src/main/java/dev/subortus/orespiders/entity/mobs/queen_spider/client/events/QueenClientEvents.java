@@ -15,9 +15,9 @@ import net.minecraftforge.fml.common.Mod;
 public class QueenClientEvents {
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
-        event.registerLayerDefinition(ModModelLayers.QUEEN_ZERO, QueenSpiderModelZero::createSpiderBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.QUEEN_ONE, QueenSpiderModelOne::createSpiderBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.QUEEN_TWO, QueenSpiderModelTwo::createSpiderBodyLayer);
-        event.registerLayerDefinition(ModModelLayers.QUEEN_THREE, QueenSpiderModelThree::createSpiderBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.QUEEN_ZERO, QueenSpiderModelZero::createZeroSpiderBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.QUEEN_ONE, QueenSpiderModelOne::createOneSpiderBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.QUEEN_TWO, QueenSpiderModelTwo::createTwoSpiderBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.QUEEN_THREE, QueenSpiderModelThree::createThreeSpiderBodyLayer);
     }
 }

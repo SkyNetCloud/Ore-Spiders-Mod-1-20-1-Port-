@@ -1,10 +1,7 @@
 package dev.subortus.orespiders.entity.mobs.server.entities_all;
 
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -22,29 +19,21 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LightBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.LightChunk;
-import net.minecraft.world.level.chunk.LightChunkGetter;
-import net.minecraft.world.level.lighting.BlockLightEngine;
-import net.minecraft.world.level.lighting.LevelLightEngine;
-import net.minecraft.world.level.lighting.LightEngine;
 import net.minecraft.world.phys.AABB;
 
 
-public class ObsidianSpiderEntity extends Spider {
-    public ObsidianSpiderEntity(EntityType<? extends Spider> pEntityType, Level pLevel) {
+public class NetheriteSpiderEntity extends Spider {
+    public NetheriteSpiderEntity(EntityType<? extends Spider> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
-        this.goalSelector.addGoal(4, new ObsidianSpiderAttackGoal(this));
+        this.goalSelector.addGoal(4, new NetheriteSpiderAttackGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -55,25 +44,17 @@ public class ObsidianSpiderEntity extends Spider {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)
+                .add(Attributes.MAX_HEALTH, 70.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.2F) // Default Spider movement speed - 0.1
-                .add(Attributes.ATTACK_DAMAGE, 7.0f)
-                .add(Attributes.FOLLOW_RANGE, 12)  // Default Spider follow range - 4
+                .add(Attributes.ATTACK_DAMAGE, 9.0f)
+                .add(Attributes.FOLLOW_RANGE, 20)  // Default Spider follow range + 4
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0f);
     }
 
-    @Override
-    public void aiStep() {
-        super.aiStep();
-        if(random.nextInt(20) == 10){
-            this.level().addParticle(ParticleTypes.LAVA, this.getRandomX(0.2D), this.getRandomY(), this.getRandomZ(0.2D), 0.0D, 0.0D, 0.0D);
-        }
-    }
-
-    public static boolean checkObsidianSpiderSpawnRules(EntityType<? extends Monster> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        boolean nearObsidian = pLevel.getBlockStates(new AABB(-1.5,-1.5,-1.5,1.5,1.5,1.5)).anyMatch(blockState -> blockState.is(Blocks.OBSIDIAN));
-        if (nearObsidian){
-            return pLevel.getDifficulty() != Difficulty.PEACEFUL && isDarkEnoughToSpawn(pLevel, pPos, pRandom) && checkMobSpawnRules(pType, pLevel, pSpawnType, pPos, pRandom);
+    public static boolean checkNetheriteSpiderSpawnRules(EntityType<? extends Monster> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        boolean nearNetherite = pLevel.getBlockStates(new AABB(-7.5,-7.5,-7.5,7.5,7.5,7.5)).anyMatch(blockState -> blockState.is(Blocks.ANCIENT_DEBRIS));
+        if (nearNetherite){
+            return checkMobSpawnRules(pType, pLevel, pSpawnType, pPos, pRandom);
         } else {
             return false;
         }
@@ -95,23 +76,23 @@ public class ObsidianSpiderEntity extends Spider {
                 if(ranNum == 1){
                     int i = 0;
                     while(i <= ammountToDrop) {
-                        this.spawnAtLocation(Items.OBSIDIAN);
+                        this.spawnAtLocation(Items.NETHERITE_SCRAP);
                         i++;
                     }
                 }
             } else {
                 int i = 0;
                 while(i > ammountToDropWithlootEnchant) {
-                    this.spawnAtLocation(Items.OBSIDIAN);
+                    this.spawnAtLocation(Items.NETHERITE_SCRAP);
                     i++;
                 }
             }
-            this.spawnAtLocation(Items.OBSIDIAN);
+            this.spawnAtLocation(Items.NETHERITE_SCRAP);
         }
     }
 
-    static class ObsidianSpiderAttackGoal extends MeleeAttackGoal {
-        public ObsidianSpiderAttackGoal(Spider pSpider) {
+    static class NetheriteSpiderAttackGoal extends MeleeAttackGoal {
+        public NetheriteSpiderAttackGoal(Spider pSpider) {
             super(pSpider, 1.0D, true);
         }
 
@@ -138,7 +119,7 @@ public class ObsidianSpiderEntity extends Spider {
                 this.resetAttackCooldown();
                 this.mob.swing(InteractionHand.MAIN_HAND);
                 this.mob.doHurtTarget(pEnemy);
-                pEnemy.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1, true, true, true));
+                pEnemy.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200, 1, true, true, true));
             }
 
         }

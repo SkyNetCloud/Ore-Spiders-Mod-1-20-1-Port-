@@ -8,7 +8,10 @@ import dev.subortus.orespiders.entity.mobs.server.entities_all.CoalSpiderEntity;
 import dev.subortus.orespiders.entity.mobs.server.entities_all.ObsidianSpiderEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.GlowSquid;
 
 public class ObsidianSpiderRenderer extends MobRenderer<ObsidianSpiderEntity, ObsidianSpiderModel<ObsidianSpiderEntity>> {
     public ObsidianSpiderRenderer(EntityRendererProvider.Context pContext) {
@@ -20,4 +23,5 @@ public class ObsidianSpiderRenderer extends MobRenderer<ObsidianSpiderEntity, Ob
     public ResourceLocation getTextureLocation(ObsidianSpiderEntity pEntity) {
         return new ResourceLocation(OreSpidersMod.MOD_ID, "textures/entity/obsidian/obsidian_spider.png");
     }
+
 }

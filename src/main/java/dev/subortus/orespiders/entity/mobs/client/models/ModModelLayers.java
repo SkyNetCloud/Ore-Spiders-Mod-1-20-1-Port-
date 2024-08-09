@@ -5,6 +5,10 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
 public class ModModelLayers {
+    public static final ModelLayerLocation NETHERITE_SPIDER_LAYER =
+            new ModelLayerLocation(new ResourceLocation(OreSpidersMod.MOD_ID, "netherite_spider_layer"), "main");
+    public static final ModelLayerLocation GLOWSTONE_SPIDER_LAYER =
+            new ModelLayerLocation(new ResourceLocation(OreSpidersMod.MOD_ID, "glowstone_spider_layer"), "main");
     public static final ModelLayerLocation COAL_SPIDER_LAYER =
            new ModelLayerLocation(new ResourceLocation(OreSpidersMod.MOD_ID, "coal_spider_layer"), "main");
     public static final ModelLayerLocation QUARTZ_SPIDER_LAYER =

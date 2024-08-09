@@ -50,6 +50,12 @@ public class ModItems {
     public static final RegistryObject<Item> OBSIDIAN_SPIDER_SPAWN_EGG = MOD_ITEMS.register("obsidian_spider_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_SPIDER_ENTITY, 0xa000000, 0x7106aa, new Item.Properties()));
 
+    public static final RegistryObject<Item> GLOWSTONE_SPIDER_SPAWN_EGG = MOD_ITEMS.register("glowstone_spider_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GLOWSTONE_SPIDER_ENTITY, 0xa000000, 0xffe599, new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHERITE_SPIDER_SPAWN_EGG = MOD_ITEMS.register("netherite_spider_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.NETHERITE_SPIDER_ENTITY, 0xa000000, 0x40332b, new Item.Properties()));
+
     public static final RegistryObject<Item> DIAMOND_NUGGET = MOD_ITEMS.register("diamond_nugget",
             () -> new Item(new Item.Properties()));
 

@@ -19,6 +19,15 @@ public class ModEntities {
             MOD_ENTITIES.register("coal_spider", () -> EntityType.Builder.of(CoalSpiderEntity::new, MobCategory.MONSTER)
                     .sized(1.4f,0.9f).build("coal_spider"));
 
+    public static final RegistryObject<EntityType<GlowstoneSpiderEntity>> GLOWSTONE_SPIDER_ENTITY =
+            MOD_ENTITIES.register("glowstone_spider", () -> EntityType.Builder.of(GlowstoneSpiderEntity::new, MobCategory.MONSTER)
+                    .sized(1.4f,0.9f).build("glowstone_spider"));
+
+    public static final RegistryObject<EntityType<NetheriteSpiderEntity>> NETHERITE_SPIDER_ENTITY =
+            MOD_ENTITIES.register("netherite_spider", () -> EntityType.Builder.of(NetheriteSpiderEntity::new, MobCategory.MONSTER)
+                    .sized(1.4f,0.9f).build("netherite_spider"));
+
+
     public static final RegistryObject<EntityType<QuartzSpiderEntity>> QUARTZ_SPIDER_ENTITY =
             MOD_ENTITIES.register("quartz_spider", () -> EntityType.Builder.of(QuartzSpiderEntity::new, MobCategory.MONSTER)
                     .sized(1.4f,0.9f).build("quartz_spider"));

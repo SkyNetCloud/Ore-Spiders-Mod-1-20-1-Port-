@@ -1,12 +1,14 @@
-// 1.20.1	2024-08-06T13:16:37.472916801	Item Models: orespiders
+// 1.20.1	2024-08-08T19:31:01.218100519	Item Models: orespiders
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/coal_spider_spawn_egg.json
 b974a27573fc18e847293c1eb36518e167f8d95a assets/orespiders/models/item/diamond_nugget.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/diamond_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/emerald_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/ender_spider_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/glowstone_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/gold_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/iron_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/lapis_spider_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/netherite_spider_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/orespiders/models/item/obsidian_spider_spawn_egg.json
 dcbe7d3ea7ee79ede9a85262be07e1a373d69f4d assets/orespiders/models/item/orb_weaver.json
 655ead776508a5086ce83cbc5d9927ac22bc5262 assets/orespiders/models/item/orb_weaver_projectile.json

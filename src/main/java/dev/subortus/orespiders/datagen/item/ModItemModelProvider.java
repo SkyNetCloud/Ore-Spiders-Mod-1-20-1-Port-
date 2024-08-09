@@ -29,7 +29,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.DIAMOND_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.EMERALD_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.OBSIDIAN_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-
+        withExistingParent(ModItems.GLOWSTONE_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.NETHERITE_SPIDER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.DIAMOND_NUGGET, "generated");
         simpleItem(ModItems.QUEEN_SPIDER_EYE, "generated");

@@ -21,6 +21,8 @@ public class ModEventBusEvents {
         event.put(ModEntities.EMERALD_SPIDER_ENTITY.get(), EmeraldSpiderEntity.createAttributes().build());
         event.put(ModEntities.DIAMOND_SPIDER_ENTITY.get(), DiamondSpiderEntity.createAttributes().build());
         event.put(ModEntities.OBSIDIAN_SPIDER_ENTITY.get(), ObsidianSpiderEntity.createAttributes().build());
+        event.put(ModEntities.GLOWSTONE_SPIDER_ENTITY.get(), GlowstoneSpiderEntity.createAttributes().build());
+        event.put(ModEntities.NETHERITE_SPIDER_ENTITY.get(), NetheriteSpiderEntity.createAttributes().build());
 
 
     }
